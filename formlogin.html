@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Login</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #def;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      display: inline;
+      vertical-align: middle;
+    }
+    header img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    #login-form {
+      background-color: #fff;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #abc;
+      border-radius: 5px;
+      margin: auto;
+    }
+    #login-form label {
+      width: 120px;
+      display: inline-block;
+    }
+    #login-form input {
+      width: 166px;
+    }
+    #login-form .row {
+      margin: 10px 0;
+    }
+    #login-form button {
+      margin-left: 125px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="media/logo.png" alt="Logo">
+    <h1>Administrator</h1>
+  </header>
+  <main>
+    <form action="" id="login-form">
+      <div class="row">
+        <label for="input-username">Username</label>
+        <input type="text" name="username" id="input-username" autofocus required>
+      </div>
+      <div class="row">
+        <label for="input-password">Password</label>
+        <input type="password" name="password" id="input-password" required>
+      </div>
+      <div class="row">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

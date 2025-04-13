@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+    }
+    #form-regis .row {
+      margin: 10px;
+    }
+    #form-regis .row > label {
+      display: inline-block;
+      width: 150px;
+    }
+    #form-regis .radio-group,
+    #form-regis .check-group {
+      display: inline-block;
+    }
+    input[type="text"],
+    textarea {
+      border: none;
+      border-bottom: 1px dotted #999;
+      padding: 5px;
+      background-color: #eee;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pendaftaran Anggota Baru</h1>
+  </header>
+  <main>
+    <form action="" id="form-regis">
+      <div class="row">
+        <label for="input-nama">Nama</label>
+        <input type="text" id="input-nama" name="nama" autofocus>
+      </div>
+      <div class="row">
+        <label for="input-alamat">Alamat</label>
+        <textarea name="alamat" id="input-alamat"></textarea>
+      </div>
+      <div class="row">
+        <label for="input-tanggal-lahir">Tanggal Lahir</label>
+        <input type="date" id="input-tanggal-lahir" name="tanggal_lahir">
+      </div>
+      <div class="row">
+        <label>Gender</label>
+        <div class="radio-group">
+          <div>
+            <input type="radio" name="gender" value="L" id="radio-laki">
+            <label for="radio-laki">Laki-laki</label>
+          </div>
+          <div>
+            <input type="radio" name="gender" value="P" id="radio-perempuan">
+            <label for="radio-perempuan">Perempuan</label>
+          </div>
+          <div>
+            <input type="radio" name="gender" value="R" id="radio-rahasia" checked>
+            <label for="radio-rahasia">Rahasia</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="input-tinggi">Tinggi Badan</label>
+        <input type="number" id="input-tinggi" name="tinggi" min="50" step="0.1" required>
+        <span>sentimeter</span>
+      </div>
+      <div class="row">
+        <label for="input-status">Status Member</label>
+        <select name="status" id="input-status">
+          <option disabled selected>Pilih Status</option>
+          <option value="0">Bronze</option>
+          <option value="1">Silver</option>
+          <option value="2">Gold</option>
+          <option value="3">Platinum</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Layanan Tambahan</label>
+        <div class="check-group">
+          <div>
+            <input type="checkbox" name="layanan" id="check-layanan-1" value="1">
+            <label for="check-layanan-1">Locker</label>
+          </div>
+          <div>
+            <input type="checkbox" name="layanan" id="check-layanan-2" value="2">
+            <label for="check-layanan-2">Personal Trainer</label>
+          </div>
+          <div>
+            <input type="checkbox" name="layanan" id="check-layanan-3" value="3">
+            <label for="check-layanan-3">Suplemen</label>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
