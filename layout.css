@@ -21,3 +21,44 @@ header {
   padding: 20px;
   border-radius: 4px;
 }
+
+.p-relative {
+  background-color: #cfc;
+  position: sticky;
+  top: 0px;
+}
+.p-fixed {
+  position: fixed;
+  background-color: #fcc;
+  top: 0px;
+  right: 0px;
+  width: 30%;
+}
+
+.ft-left {
+  background-color: #fcc;
+  float: left;
+  width: 25%;
+}
+.ft-right {
+  background-color: #cfc;
+  float: right;
+  width: 25%;
+}
+
+.c-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.c-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.c-flex > .item {
+  width: 400px;
+  flex-grow: 1;
+}
