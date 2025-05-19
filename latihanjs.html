@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan JavaScript</title>
+</head>
+<body>
+  <header>
+    <h1>Latihan JavaScript</h1>
+  </header>
+  <main>
+    <h2>Function</h2>
+    <input type="text" id="nama" placeholder="Masukkan Nama" oninput="salam()">
+    <!-- <button type="button" onclick="salam()">Salam</button> -->
+    <h3 id="teks-salam"></h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae doloremque dicta adipisci laborum ipsam ea magnam molestias temporibus dolor inventore molestiae voluptas, sit enim hic, aliquid amet mollitia, vero soluta.</p>
+    <hr>
+
+    <h2>Event</h2>
+    <button type="button" onclick="salam()">Salam</button>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic illum ex quos quas, est mollitia ea odit, animi consequuntur accusamus ullam sed dolorem ratione tempore voluptatibus saepe distinctio nulla maiores.</p>
+    <hr>
+    
+    <h2>Built-in Dialog Box</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A veniam ipsa voluptatibus. Molestias dolor nostrum error dolorem cumque odio odit aperiam eius, beatae soluta quisquam voluptates aliquam fuga numquam fugit.</p>
+    <ul>
+      <li><button type="button" onclick="alert('Halo, ini dialog Alert.')"> + </button> Alert</li>
+      <li><button type="button" onclick="confirm('Halo, ini dialog Confirm:')"> + </button> Confirm</li>
+      <li><button type="button" onclick="prompt('Halo, ini dialog Prompt:')"> + </button> Prompt</li>
+    </ul>
+  </main>
+  <script>
+    // alert("Selamat Pagi!");
+
+    // contoh variable =====
+    var a = -10.3;
+    var b = 'budiman';
+    var c = true;  // false
+    var d;
+
+    function salam() {
+
+      var elemenNama = document.getElementById('nama'); 
+      var nama = elemenNama.value.trim(); // ambil value dari input text
+
+      var elemenTeks = document.getElementById('teks-salam');
+
+      // validasi nama
+      if (nama == '') {
+        elemenTeks.innerText = '';
+      } else {
+        elemenTeks.innerText = 'Selamat pagi, ' + nama;
+      }
+
+      // cek variable nama di console
+      console.log(nama);
+    }
+
+  </script>
+</body>
+</html>
