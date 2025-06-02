@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Belanja</title>
+</head>
+<body>
+  <header>
+    <h1>Daftar Belanja</h1>
+  </header>
+  <main>
+    <input type="text" id="itemInput" placeholder="Masukkan item belanja" autofocus autocomplete="off">
+    <ul id="daftarBelanja"></ul>
+  </main>
+  <script>
+    document
+      .getElementById('itemInput')
+      .addEventListener('change', function(){
+        let itemValue = this.value;
+        let ul = document.getElementById('daftarBelanja');
+
+        // buat li
+        let li = document.createElement('li');
+        // buat span
+        let span = document.createElement('span');
+        // tambahkan class ke span
+        span.classList.add('itemList');
+        // masukkan nilai ke span
+        span.innerText = itemValue;
+        // masukkan span ke dalam li
+        li.appendChild(span);
+        // buat button
+        let button = document.createElement('button');
+        button.classList.add('delButton');
+        button.innerText = '-';
+        // masukkan button ke dalam li
+        li.appendChild(button);
+        // masukkan li ke dalam ul
+        ul.appendChild(li);
+        this.value = '';
+      });
+  </script>
+</body>
+</html>
