@@ -4,6 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Belanja</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    main {
+      max-width: 600px;
+      margin: auto;
+    }
+    #itemInput {
+      width: 100%;
+      padding: 15px 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: none;
+    }
+    #itemInput:focus {
+      outline: none;
+      border-bottom: 2px dashed #c96;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .delButton {
+      background-color: #f63;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,20 +70,20 @@
 
         // buat li
         let li = document.createElement('li');
-        // buat span
+        
+        // buat span, tambahkan class, isi nilai, dan masukkan ke dalam li
         let span = document.createElement('span');
-        // tambahkan class ke span
         span.classList.add('itemList');
-        // masukkan nilai ke span
         span.innerText = itemValue;
-        // masukkan span ke dalam li
         li.appendChild(span);
-        // buat button
+
+        // buat button, tambahkan class, isi teks, dan masukkan ke dalam li
         let button = document.createElement('button');
         button.classList.add('delButton');
-        button.innerText = '-';
-        // masukkan button ke dalam li
+        button.innerText = 'x';
         li.appendChild(button);
+        // tambahkan event listener untuk button, yang akan menghapus li saat diklik
+
         // masukkan li ke dalam ul
         ul.appendChild(li);
         this.value = '';
