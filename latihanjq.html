@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan jQuery</title>
+</head>
+<body>
+  <header>
+    <h1>Latihan jQuery</h1>
+  </header>
+  <main>
+    <button id="btn-hide">Hide</button>
+    <button id="btn-show">Show</button>
+    <button id="btn-toggle">Toggle</button>
+    <label>
+      <input type="checkbox" id="inp-chk">
+      Show Element
+    </label>
+    <p id="txt-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, commodi labore. Illum, voluptatum repudiandae suscipit excepturi quia esse neque totam incidunt fuga nostrum veritatis, autem, quae libero ipsum ipsa sit minima alias? Modi, nobis quas distinctio, dolorum, ducimus velit repellat officia dolorem corporis natus itaque. Tempore pariatur ad ab incidunt numquam. Dicta voluptatibus vel nostrum? Quos ab doloremque tempora impedit culpa minus unde ipsam id alias? Dolore pariatur ullam praesentium temporibus illum magnam at blanditiis a perspiciatis illo rem nam atque deserunt sunt ut non, omnis molestias vero sit explicabo voluptas mollitia fugit, libero eum! Ullam similique ea sequi laborum?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate at voluptatum id reiciendis, provident exercitationem culpa eius, soluta tenetur commodi quos illo aliquam, quo deleniti fugit facilis laborum sequi vitae vero magnam unde animi consectetur accusamus laudantium. Quidem, reprehenderit optio!</p>
+    <hr>
+    <input type="text" id="inp-txt" placeholder="Tuliskan nama">
+    <button id="btn-nama">Salam</button>
+    <h3 id="txt-salam"></h3>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+
+      $('#btn-nama').click(function(){
+        let nama = $('#inp-txt').val();
+        $('#txt-salam').text('Selamat Pagi, ' + nama);
+      });
+
+      $(function(){
+        $('#txt-card').hide();
+      })
+
+      $('#btn-hide').click(function(){
+        $('#txt-card').slideUp(300);
+      });
+
+      $('#btn-show').click(function(){
+        $('#txt-card').slideDown(300);
+      });
+
+      $('#btn-toggle').click(function(){
+        $('#txt-card').slideToggle(200);
+      });
+
+      $('#inp-chk').change(function(){
+        if($(this).is(':checked')) {
+          $('#txt-card').slideDown(300);
+        } else {
+          $('#txt-card').slideUp(300);
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>

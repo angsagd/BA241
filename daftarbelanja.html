@@ -83,6 +83,9 @@
         button.innerText = 'x';
         li.appendChild(button);
         // tambahkan event listener untuk button, yang akan menghapus li saat diklik
+        button.addEventListener('click', function(){
+          this.parentElement.remove();
+        });
 
         // masukkan li ke dalam ul
         ul.appendChild(li);
