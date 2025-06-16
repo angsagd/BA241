@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
   <title>Detail Negara : Indonesia</title>
   <style>
     body {
@@ -64,21 +67,52 @@
 </head>
 <body>
   <header>
-    <h1 class="country-name">Republik Indonesia</h1>
+    <h1 class="country-name name-common"></h1>
   </header>
   <main>
     <div class="country-image">
       <div class="country-flag">
-        <img src="https://flagcdn.com/w320/id.png" alt="Flag of Indonesia">
+        <img src="" alt="Flag">
       </div>
       <div class="country-coa">
-        <img src="https://mainfacts.com/media/images/coats_of_arms/id.png" alt="Coat of Arms of Indonesia">
+        <img src="" alt="Coat of Arms of Indonesia">
       </div>
     </div>
-    <h2>Detail information about [Common Name].</h2>
+    <h2>Detail information about <span class="name-common"></span>.</h2>
     <p>The official name of the country is [Official Name], with [Capital] as the capital city, located on the continent of [Continent]. It covers an area of [Area] square kilometers and has a population of approximately [Population]. The official currency is the [Currency Name] ([Currency Symbol]).</p>
     <p>About the flag</p>
     <div><a href="negara.html">Back</a></div>
   </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      let searchParams = new URLSearchParams(window.location.search);
+      let dataName = searchParams.get('name');
+
+      let url = "https://restcountries.com/v3.1/name/"+dataName;
+      $.get(url, function(data){
+
+        let country = data[0];
+        console.log(country);
+        let nameCommon = country.name.common;    // common name
+        let nameOficial = country.name.official;    // official name
+        let flagPng = country.flags.png;    // url flag
+        let coaPng = country.coatOfArms.png;    // url coa
+        let flagAlt = country.flags.alt;    // flag alt
+        // let capital = country.capitals[0];   // capital
+        // let continent = country.continents[0];    // continet
+            // area
+            // population
+            // currency name
+            // currency symbol
+
+        $('.name-common').text(nameCommon);
+        $('.country-flag img').attr('src', flagPng);
+        $('.country-coa img').attr('src', coaPng);
+
+      });
+
+    });
+  </script>
 </body>
 </html>
